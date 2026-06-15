@@ -1,6 +1,5 @@
 baseURL: "https://luckydddnyot.github.io/"
 title: "묻혀 있던 것들"
-theme: ["PaperMod"]
 
 # 다국어: 한국어 기본, 영어 병행 가능 구조
 defaultContentLanguage: "ko"
