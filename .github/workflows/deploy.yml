@@ -48,7 +48,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Get Hugo modules
-        run: hugo mod get -u
+        run: hugo mod get github.com/adityatelange/hugo-PaperMod@master
 
       - name: Build with Hugo
         env:
