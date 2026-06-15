@@ -1,0 +1,112 @@
+baseURL: "https://luckydddnyot.github.io/"
+title: "묻혀 있던 것들"
+theme: ["PaperMod"]
+
+# 다국어: 한국어 기본, 영어 병행 가능 구조
+defaultContentLanguage: "ko"
+languages:
+  ko:
+    languageName: "한국어"
+    weight: 1
+    title: "묻혀 있던 것들"
+    params:
+      homeInfoParams:
+        Title: "묻혀 있던 것들"
+        Content: >
+          AI가 내 능력을 만들어준 게 아니라, 그동안 묻혀 있던 것들을 꺼내줬다.
+
+          13년차 HR IT 전문가가 PM과 개발자 사이에서, 회사 안과 밖 사이에서 쓰는 기록.
+    menu:
+      main:
+        - identifier: posts
+          name: 글
+          url: /posts/
+          weight: 10
+        - identifier: about
+          name: 소개
+          url: /about/
+          weight: 20
+        - identifier: tags
+          name: 태그
+          url: /tags/
+          weight: 30
+  en:
+    languageName: "English"
+    weight: 2
+    title: "What Was Buried"
+    params:
+      homeInfoParams:
+        Title: "What Was Buried"
+        Content: "Notes from an HR IT professional, between PM and developer, between inside and outside the company."
+    menu:
+      main:
+        - identifier: posts
+          name: Posts
+          url: /posts/
+          weight: 10
+        - identifier: about
+          name: About
+          url: /about/
+          weight: 20
+
+# Hugo Modules로 PaperMod 자동 import (웹 환경에서 submodule 없이 빌드 가능)
+module:
+  imports:
+    - path: github.com/adityatelange/hugo-PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+pygmentsUseClasses: true
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # opengraph, twitter-cards, schema 활성화
+  description: "AI 시대, 실행 비용이 낮아진 세상에서 경험 많은 비개발자가 갖게 되는 기회에 대한 기록."
+  author: "진영"
+  defaultTheme: auto # 사용자 시스템 설정 따라 라이트/다크
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  ShowWordCount: false
+  comments: false
+
+  assets:
+    disableHLJS: false
+    favicon: "/favicon.ico"
+
+  # 첫 화면을 글 목록 중심으로 (프로필 카드 + 최근 글)
+  profileMode:
+    enabled: false
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/luckydddnyot"
+
+taxonomies:
+  tag: tags
+  category: categories
+
+# 한국어 검색 등 위해 출력 포맷에 JSON 추가
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: monokai
